@@ -142,8 +142,8 @@ if `i'>=2004&`i'<=2006 {
 					(17=18) (18=21) (19=20) (20= 7) (21=22) (22=23)
 }
 order	mes conglome vivienda hogar p612n
-noisily reshape wide p612, i(mes conglome vivienda hogar) j(p612n) 
-noisily keep mes conglome vivienda hogar p6121-p61221
+noi reshape wide p612, i(mes conglome vivienda hogar) j(p612n) 
+noi keep mes conglome vivienda hogar p6121-p61221
 destring mes conglome vivienda hogar, replace // 'int'-type for key variables
 gen int anho = `i' // survey-year variable
 qui compress
@@ -177,19 +177,12 @@ save	"$dt\temp-`i'-sumaria.dta", replace
 * merging modulo 100, 200, 300, 400, 500 & 612
 *-------------------------------------------------------------------------------
 use		"$dt\temp-`i'-100.dta", clear 
-mer 1:m anho mes conglome vivienda hogar			using "$dt\temp-`i'-200.dta"
-rename  _merge _m_100_200
-mer 1:1 anho mes conglome vivienda hogar codperso	using "$dt\temp-`i'-300.dta"
-rename  _merge _m_100_200_300
-mer 1:1 anho mes conglome vivienda hogar codperso	using "$dt\temp-`i'-400.dta"
-rename  _merge _m_100_200_300_400
-mer 1:1 anho mes conglome vivienda hogar codperso	using "$dt\temp-`i'-500.dta"
-rename  _merge _m_100_200_300_400_500
-* NOTA: los _merge==1 vienen de m200 y no estan en m300. OK -> m300 lo responden los 'miembros presentes' y 'mayores de 3anhos'
-mer m:1 anho mes conglome vivienda hogar			using "$dt\temp-`i'-612.dta"
-rename  _merge _m_100_200_300_400_500_612
-mer m:1 anho mes conglome vivienda hogar			using "$dt\temp-`i'-sumaria.dta"
-rename  _merge _m_100_200_300_400_500_612_sum
+mer 1:m anho mes conglome vivienda hogar			using "$dt\temp-`i'-200.dta", gen(_m_100_200)
+mer 1:1 anho mes conglome vivienda hogar codperso	using "$dt\temp-`i'-300.dta", gen(_m_100_200_300)
+mer 1:1 anho mes conglome vivienda hogar codperso	using "$dt\temp-`i'-400.dta", gen(_m_100_200_300_400)
+mer 1:1 anho mes conglome vivienda hogar codperso	using "$dt\temp-`i'-500.dta", gen(_m_100_200_300_400_500)
+mer m:1 anho mes conglome vivienda hogar			using "$dt\temp-`i'-612.dta", gen(_m_100_200_300_400_500_612)
+mer m:1 anho mes conglome vivienda hogar			using "$dt\temp-`i'-sumaria.dta", gen(_m_100_200_300_400_500_612_sum)
 save	"$dt\temp-`i'.dta", replace
 }
 *-------------------------------------------------------------------------------
