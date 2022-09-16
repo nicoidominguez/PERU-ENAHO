@@ -7,8 +7,8 @@ It contains the treatment of the following modules:
 - Poverty and Household Income and Expenses
 
 The following is a non-comprehensive list of peer-reviewed Econ articles published that used this household survey: 
-- Bernal, N., Miguel A. Carpio, & Tobias J. Klein (2017) "The effects of access to health insurance: Evidence from a regression discontinuity design in Peru," Journal of Public Economics, 154, 122-136.
-- Galdo, J. (2013) "The Long-Run Labor-Market Consequences of Civil War: Evidence from the Shining Path in Peru," Economic Development and Cultural Change 61, 4: 789-823.
-- Ñopo (RESTAT 2008–Labor)
-- Dell (Econometrica 2010–Economic History)
-- Aragon and Rud (AEJ:EP 2013–Natural Resources).
+- Aragón, F. M., & Rud, J. P. (2013). Natural resources and local communities: evidence from a Peruvian gold mine. American Economic Journal: Economic Policy, 5(2), 1-25.
+- Bernal, N., Carpio, M. A., & Klein, T. J. (2017). The effects of access to health insurance: evidence from a regression discontinuity design in Peru. Journal of Public Economics, 154, 122-136.
+- Dell, M. (2010). The persistent effects of Peru's mining mita. Econometrica, 78(6), 1863-1903.
+- Galdo, J. (2013). The long-run labor-market consequences of civil war: Evidence from the Shining Path in Peru. Economic Development and Cultural Change, 61(4), 789-823.
+- Ñopo, H. (2008). Matching as a tool to decompose wage gaps. The review of economics and statistics, 90(2), 290-299.
